@@ -250,7 +250,7 @@ describe('al_aws Tests', function() {
                 return callback(null, s3PutObjectResponse);
             });
 
-            bucketParameters.bucketName = colMock.S3_CONFIGURATION_BUCKET;
+            bucketParameters.bucket = colMock.S3_CONFIGURATION_BUCKET;
             m_alAws.uploadS3Object(bucketParameters, (err, response) => {
                 assert.equal(s3PutObjectResponse, response);
             });

@@ -216,13 +216,13 @@ var setEnv = function(vars, callback) {
     });
 };
 
-var uploadS3Object = function ({ data, key, bucketName }, callback) {
+var uploadS3Object = function ({ data, key, bucket }, callback) {
     var s3 = new AWS.S3();
     // Setting up S3 putObject parameters
     const parseData = typeof data !== 'string' ? JSON.stringify(data) : data;
-    if (bucketName) {
+    if (bucket) {
         const params = {
-            Bucket: bucketName,
+            Bucket: bucket,
             Key: key,
             Body: parseData
         };
